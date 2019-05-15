@@ -79,7 +79,7 @@ class PostController extends Controller
             if ($extention != 'jpeg') {
                 $extention = 'jpeg';
             }
-            $path = 'posts/' . $post->id;
+            $path = public_path('posts/' . $id);
             $photo->move($path, 'thumbnail.jpg');
         }
         session()->put('message', 'your post was created successfully');
@@ -134,7 +134,7 @@ class PostController extends Controller
             if ($extention != 'jpeg') {
                 $extention = 'jpeg';
             }
-            $path = 'posts/' . $id;
+            $path = public_path('posts/' . $id);
             Storage::delete('/posts/' . $id . '/thumbnail.jpg');
             $photo->move($path, 'thumbnail.jpg');
         }
