@@ -51,11 +51,6 @@ class PostController extends Controller
             'photo' => 'nullable|file|mimes:jpeg,bmp,png',
         ]);
         $post = new Post();
-//        $tag = new Tag();
-//        $string = $request->input('tag');
-////        $arr = explode('+', $string);
-////        dd($arr);
-        //$tag->save();
         $post->category_id = $request->get('cat');
         $post->title = $request->input('title');
         $post->body = $request->input('body');
