@@ -74,7 +74,7 @@ class PostController extends Controller
             if ($extention != 'jpeg') {
                 $extention = 'jpeg';
             }
-            $path = public_path('posts/' . $id);
+            $path = public_path('posts/' . $post->id);
             $photo->move($path, 'thumbnail.jpg');
         }
         session()->put('message', 'your post was created successfully');
